@@ -17,6 +17,7 @@ A synchronous up/down counter with load, overflow, and underflow detection.
 - Overflow/underflow flag generation
 - Complete SVA assertion suite covering all input conditions
 - Simulated using Questa
+- Added a parameterized synchronous up/down counter (default WIDTH=4) with load, overflow, and underflow detection.
 
 ## Tools
 - SystemVerilog (IEEE 1800)
