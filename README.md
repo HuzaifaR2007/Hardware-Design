@@ -10,9 +10,17 @@ A parameterized UART transmitter and receiver implementing full serial communica
 - FSM-based RTL architecture with configurable baud rate (434 cycles/bit at 115200 baud on 50MHz clock)
 - Transmitter implements start/data/stop bit framing with shift-register based serialization
 - Receiver implements start-bit detection, 1.5x baud period synchronization for mid-bit sampling,
-  and shift-register based serial-to-parallel reconstruction
+  and serial-to-parallel data reconstruction
 - Loopback testbench verifying end-to-end byte transmission across multiple test vectors
 - SVA concurrent assertions verifying state transition behaviour using next-cycle implication
+
+### Synchronous FIFO
+A parameterized synchronous FIFO with configurable depth and data width.
+- Circular buffer implementation with read/write pointers and count-based full/empty detection
+- Overflow and underflow protection — writes to a full FIFO and reads from an empty FIFO are safely rejected
+- Supports simultaneous read/write with correct count maintenance
+- SVA assertion suite covering full, empty, overflow, underflow, and simultaneous read/write conditions
+- Verified ordering correctness across all 8 slots on Questa
 
 ### 4-bit Parameterized Counter
 A synchronous up/down counter with configurable bit width.
